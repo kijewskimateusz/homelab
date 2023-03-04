@@ -5,7 +5,7 @@ services:
     image: lissy93/dashy
     container_name: Dashy
     volumes:
-      - ./dashy/my-config.yml:/app/public/conf.yml
+      - /home/homelab/homelab/management/dashy/my-config.yml:/app/public/conf.yml
     ports:
       - 4000:80
     networks:

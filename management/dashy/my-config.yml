@@ -1,0 +1,70 @@
+pageInfo:
+  title: Home Lab mainpage
+sections:
+  - name: Network
+    items:
+      - title: Mikrotik
+        description: Dashboard for Mikrotik
+        icon: hl-mikrotik
+        url: http://10.10.10.1/
+        id: 0_746_mikrotik
+      - title: Tailscale
+        description: 'Dashboard for Tailscale '
+        icon: hl-tailscale
+        url: https://login.tailscale.com/admin/machines
+        id: 1_746_tailscale
+      - title: TBD - Pi-hole
+        description: Dashboard for Pi-hole
+        icon: hl-pihole
+        id: 2_746_tbdpihole
+    displayData:
+      sortBy: most-used
+      rows: 2
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+  - name: Management
+    items:
+      - title: Portainer
+        description: Docker image management
+        icon: hl-portainer-v2
+        url: http://100.80.178.129:9000/
+        target: newtab
+        tags:
+          - zsh
+        id: 0_1021_portainer
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+  - name: Home Automation
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items: []
+  - name: Today
+    icon: far fa-calendar-day
+    widgets:
+      - type: clock
+        options:
+          customCityName: Kraków
+          format: en-GB
+          hideDate: true
+        id: 0_513_clock
+appConfig:
+  language: en
+  layout: auto
+  iconSize: large
+  cssThemes:
+    - crayola
+    - adventure
+    - argon
+    - nord
+    - nord-frost
+    - colourful
+  theme: crayola

@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  Service: # Service name
+    image: Image with tag
+    container_name: Container name
+    volumes:
+      - ./data:data
+    ports:
+      - 80:80
+    networks:
+      - homelab
+    environment:
+      FOO: bar 
+    restart: unless-stopped
+
+networks:
+  homelab:
+    external: true

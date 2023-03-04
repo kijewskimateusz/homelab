@@ -1,0 +1,31 @@
+version: "3"
+services:
+
+  dashy:
+    image: lissy93/dashy
+    container_name: Dashy
+    volumes:
+      - ./dashy/my-config.yml:/app/public/conf.yml
+    ports:
+      - 4000:80
+    networks:
+      - homelab
+    restart: unless-stopped
+
+  glances:
+    image: nicolargo/glances:latest-full
+    container_name: Glances
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 61208-61209:61208-61209
+    networks:
+      - homelab
+    environment:
+      GLANCES_OPT: -w
+    pid: host
+    restart: unless-stopped
+
+networks:
+  homelab:
+    external: true
